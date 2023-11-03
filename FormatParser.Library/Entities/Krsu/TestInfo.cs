@@ -1,34 +1,29 @@
-﻿using System.Xml.Serialization;
+﻿namespace FormatParser.Library.Entities.Krsu;
 
-namespace FormatParser.Library.Entities.Krsu;
-
-[XmlRoot("testinfo")]
+[EntityName("testinfo")]
 public class TestInfo
 {
-    [XmlElement("checker")]
     public required string Checker { get; set; }
-
-    [XmlElement("interactor")]
     public string? Interactor { get; set; }
 
-    [XmlElement("problem")]
+    [EntityName("problem")]
     public string? ProblemStatement { get; set; }
 
-    [XmlElement("memorylimit")]
+    [EntityName("memorylimit")]
     public int MemoryLimitByte { get; set; }
 
-    [XmlElement("timelimit")]
+    [EntityName("timelimit")]
     public int TimeLimitMilli { get; set; }
 
-    [XmlElement("testversion")]
+    [EntityName("testversion")]
     public int TestVersion { get; set; }
 
-    [XmlElement("runtype")]
+    [EntityName("runtype")]
     public int RunType { get; set; }
 
-    [XmlElement("group")]
+    [EntityName("group")]
     public List<TestGroup> Groups { get; set; } = new List<TestGroup>();
 
-    [XmlElement("test")]
+    [EntityName("test")]
     public List<Test> Tests { get; set; } = new List<Test>();
 }

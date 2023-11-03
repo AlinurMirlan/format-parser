@@ -1,18 +1,17 @@
-﻿using System.Xml.Serialization;
+﻿using System.Reflection;
+using System.Text;
 
 namespace FormatParser.Library.Entities.Krsu;
 
 public class Test
 {
-    [XmlAttribute("input")]
+    [EntityName("input")]
     public required string InputFile { get; set; }
 
-    [XmlAttribute("output")]
+    [EntityName("output")]
     public required string OutputFile { get; set; }
 
-    [XmlAttribute("groupid")]
+    [EntityName("groupid")]
     public int GroupId { get; set; }
-
-    [XmlAttribute("points")]
     public int Points { get; set; }
 }

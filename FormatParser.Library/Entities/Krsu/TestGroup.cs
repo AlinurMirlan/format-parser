@@ -1,15 +1,13 @@
-﻿using System.Xml.Serialization;
+﻿using System.Reflection;
+using System.Text;
 
 namespace FormatParser.Library.Entities.Krsu;
 
 public class TestGroup
 {
-    [XmlAttribute("id")]
     public int Id { get; set; }
-
-    [XmlAttribute("points")]
     public int Points { get; set; }
 
-    [XmlAttribute("prereq")]
+    [EntityName("prereq")]
     public string? Prerequisites { get; set; }
 }

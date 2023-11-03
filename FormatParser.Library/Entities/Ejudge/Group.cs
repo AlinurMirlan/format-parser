@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FormatParser.Library.Entities.Ejudge;
+﻿namespace FormatParser.Library.Entities.Ejudge;
 
 public class Group
 {
+    public int Id { get; set; }
     public Range Tests { get; set; }
     public int Score { get; set; }
     public List<int> Requires { get; set; } = new List<int>();
@@ -21,6 +16,8 @@ public class Group
     public bool StatToUsers { get; set; }
     public int UserStatus { get; set; }
     public bool TestAll { get; set; }
+
+    [EntityName("0_if")]
     public List<int> OIf { get; set; } = new List<int>();
 
 }
