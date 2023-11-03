@@ -2,12 +2,19 @@
 
 namespace FormatParser.Library.Sources;
 
-public class ZipFileSource : IFileSource
+public class ZipFileSource : IFormatSource
 {
-    public DirectoryInfo Open(string filePath, string outPath)
+    public ZipFileSource(string outputPath)
     {
-        ZipArchive zipArchive = ZipFile.OpenRead(filePath);
-        zipArchive.ExtractToDirectory(outPath);
-        return new DirectoryInfo(outPath);
+        OutPath = outputPath;
+    }
+
+    public string OutPath { get; set; }
+
+    public DirectoryInfo Open(string filePath)
+    {
+        using ZipArchive zipArchive = ZipFile.OpenRead(filePath);
+        zipArchive.ExtractToDirectory(OutPath, true);
+        return new DirectoryInfo(OutPath);
     }
 }
