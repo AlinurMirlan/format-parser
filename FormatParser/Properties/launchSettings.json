@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FormatParser": {
+      "commandName": "Project",
+      "commandLineArgs": "cats \"C:\\Alinur\\university\\4th-year\\software-engineering\\format-parser\\test-files\\cats.zip\""
+    }
+  }
+}
